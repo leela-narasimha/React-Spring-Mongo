@@ -1,19 +1,31 @@
 import React from 'react';
 
+class Form extends React.Component {
+    state = { term: ''};
 
+    onInputChange = event => {
+        this.setState({term: event.target.value});
+    }
 
+    onFormSubmit = event => {
+        event.preventDefault();
+        //TODO: 
+        this.props.onFormSubmit(this.state.term);
 
-const Form = () => {
-    return
-    <div className="ur segment">
-        <form className="ui form">
-            <div classNamve="field">
-                <label> Image Search</label>
-                <input type="text" />
+    };
+
+    render(){
+        return (
+        <div className="ui segment" >
+                <form onSubmit={this.onFormSubmit} className="ui form">
+                    <div className="field">
+                    <label> Video Search</label>
+                        <input type="text" onChange={this.onInputChange}/>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>;
-};
+        );
+    }
+}
 
 export default Form;
-

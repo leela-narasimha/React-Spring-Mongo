@@ -1,17 +1,14 @@
 //Import React and ReactDOM libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Form from './components/Form';
-
+import App from './components/App';
 //Create React components
 //const App = () => {
 //  return <div> hi There </div>
 //}
 //take react component and show it on browser
 ReactDOM.render(
-  <React.StrictMode>
-    <LoginForm />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
 
